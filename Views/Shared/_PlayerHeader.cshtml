@@ -1,0 +1,27 @@
+﻿@model DragonsClaw.Models.PlayerViewModel
+<div id="player-details">
+    <table id="header-table">
+        <thead>
+            <tr id="header-title-bar">
+                <th>Credits</th>
+                <th>Planets</th>
+                <th>Population</th>
+                <th>Food</th>
+                <th>Ore</th>
+                <th>Dilithium</th>
+                <th>Crystals</th>
+                <th>Net Worth</th>
+            </tr>
+        </thead>
+        <tr id="header-body">
+            <td>@Model.Credits.ToString("N0")</td>
+            <td>@Model.Planets.ToString("N0")</td>
+            <td>@Model.Population.ToString("N0")</td>
+            <td>@Model.Food.ToString("N0")</td>
+            <td>@Model.Ore.ToString("N0")</td>
+            <td>@Model.Dilithium.ToString("N0")</td>
+            <td>@Model.PsionicCrystals.ToString("N0")</td>
+            <td>@Model.NetWorth.ToString("N0")</td>
+        </tr>
+    </table>
+</div>

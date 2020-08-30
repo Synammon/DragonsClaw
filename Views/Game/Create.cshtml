@@ -1,0 +1,57 @@
+﻿@using DragonsClaw.Models
+@model DragonsClaw.Models.CreatePlayerModel
+
+@{
+    Layout = "~/Views/Shared/_GameLayout.cshtml";
+    ViewBag.Title = "Create";
+    List<SelectListItem> genderList = new List<SelectListItem>();
+    SelectListItem item = new SelectListItem() { Value = "-1", Text = "--------------------" };
+    genderList.Add(item);
+
+    item = new SelectListItem() { Value = "0", Text = DataLayer.GetGender(0) };
+    genderList.Add(item);
+
+    item = new SelectListItem() { Value = "1", Text = DataLayer.GetGender(1) };
+    genderList.Add(item);
+
+    item = new SelectListItem() { Value = "2", Text = DataLayer.GetGender(2) };
+    genderList.Add(item);
+
+    SelectList genders = new SelectList(genderList);
+}
+
+<div class="content-container">
+    <div class="details-content">
+        <h2>Create Sector</h2>
+        <div id="create-container">
+            <form id="create-form" action="/Game/Create" method="post">
+                @Html.HiddenFor(m => m.Email)
+                <div class="form-field">
+                    <div class="create-label">Ruler Name:</div>
+                    @Html.TextBoxFor(m => m.Name, new { @class = "create-field" })
+                </div>
+                <div class="form-field">
+                    <div class="create-label">Sector Name:</div>
+                    @Html.TextBoxFor(m => m.SectorName, new { @class = "create-field" })
+                </div>
+                <div class="form-field">
+                    <div class="create-label">Gender:</div>
+                    @Html.DropDownListFor(m => m.Gender, new SelectList(genderList, "Value", "Text"), new { @class = "create-field" })
+                </div>
+                <div class="form-field">
+                    <div class="create-label">Race:</div>
+                    @Html.DropDownListFor(m => m.Race, Model.RaceList, new { @class = "create-field" })
+                </div>
+                <div class="form-field">
+                    <div class="create-label">Class:</div>
+                    @Html.DropDownListFor(m => m.Class, Model.ClassList, new { @class = "create-field" })
+                </div>
+                <div class="form-field">
+                    <div class="create-label">@Html.CheckBoxFor(m => m.Observer) Observer</div>
+                    Observers cannot attack or be attacked. The same is true for espionage and raiding.
+                </div>
+                <input id="submit-create" type="submit" value="Create" />
+            </form>
+        </div>
+    </div>
+</div>

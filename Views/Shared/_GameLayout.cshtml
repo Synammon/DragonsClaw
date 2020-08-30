@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon's Claw</title>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    @if (Html.IsDebug())
+    {
+        <link rel="stylesheet/less" href="~/Content/dragons-claw.less" />
+        <script src="//cdn.jsdelivr.net/npm/less"></script>
+        <script src="~/Scripts/GameScript.js"></script>
+    }
+    else
+    {
+        <link rel="stylesheet" href="~/Content/dragons-claw.min.css" />
+        <script src="~/Scripts/GameScript.es5.min.js"></script>
+    }
+</head>
+<body>
+    <div class="details-content">
+        @RenderBody()
+    </div>
+    <div id="account-tab">
+        <a href="#" class="account" onclick="toggleAccountTab();">Account</a>
+        <a href="#" onclick="toggleAccountTab();" class="account align-right" style="float:right;">V</a>
+        <div id="account-details">
+            <form action="/Account/LogOff" method="post">
+                <input id="logoff" type="submit" value="Log Out" />
+            </form>
+        </div>
+    </div>
+</body>
+</html>

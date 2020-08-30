@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "Content/dragons-claw.css",
+    "inputFile": "Content/dragons-claw.less"
+  },
+  {
+    "outputFile": "Scripts/GameScript.es5.js",
+    "inputFile": "Scripts/GameScript.js"
+  }
+]
