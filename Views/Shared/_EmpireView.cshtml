@@ -1,0 +1,72 @@
+﻿@model DragonsClaw.Models.EmpireViewModel
+
+<div class="game-content">
+    <div class="header">
+        <h2>Empire</h2>
+    </div>
+    <div class="title"></div>
+    <div class="title">
+        <ul class="menu-bar">
+            <li class="active-tab" id="etab1"><a href="#" onclick="showEPanel1()">Empire</a></li>
+            <li id="etab2"><a href="#" onclick="showEPanel2()">Edit Empire</a></li>
+        </ul>
+    </div>
+    <div id="tab-container">
+        <div id="epanel1">
+            <h3>Empire of @Model.EmpireName</h3>
+            <table id="empire-list" class="data-table">
+                <thead>
+                    <tr>
+                        <th>Sector Name</th>
+                        <th>Ruler</th>
+                        <th>Role</th>
+                        <th>Race</th>
+                        <th>Class</th>
+                        <th>Planets</th>
+                        <th>Networth</th>
+                        <th>NWPP</th>
+                    </tr>
+                </thead>
+                @foreach (var p in Model.Players)
+                {
+                    <tr class="align-center">
+                        <td>@p.Sector</td>
+                        <td>@p.Ruler</td>
+                        <td>
+                            @switch (p.Role)
+                            {
+                                case DragonsClaw.Models.Role.Host:
+                                    <span>Host</span>
+                                    break;
+                                case DragonsClaw.Models.Role.ViceHost:
+                                    <span>Vice Host</span>
+                                    break;
+                                default:
+                                    <span>Member</span>
+                                    break;
+                            }
+
+                        </td>
+                        <td>
+                            @p.Race
+                        </td>
+                        <td>
+                            @p.Class
+                        </td>
+                        <td>@p.Planets.ToString("N0")</td>
+                        <td>@p.Networth.ToString("N0")</td>
+                        <td>@((p.Networth / (float)p.Planets).ToString("N1"))</td>
+                    </tr>
+                }
+            </table>
+        </div>
+        <div id="epanel2">
+            <form id="empire-details">
+                <div>Empire name: @Html.TextBoxFor(m => m.EmpireName, new { @class = "attack-field", maxlength = "50" })</div>
+                <div>Empire description: @Html.TextAreaFor(m => m.EmpireDescription)</div>
+                <div>Imperial orders: @Html.TextAreaFor(m => m.Decree)</div>
+                <div><input id="update-button" type="button" value="Update" onclick="updateEmpire()" class="small-button large-button" /></div>
+            </form>
+        </div>
+    </div>
+</div>

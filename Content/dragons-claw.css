@@ -78,6 +78,9 @@ a.account:hover {
   width: 800px;
   min-width: 800px;
 }
+.game-content {
+  border: 5px ridge #c1c1c1;
+}
 /* Index View */
 span[data-spec] {
   position: relative;
@@ -186,4 +189,145 @@ span[data-spec]:focus::after {
 }
 #header-body {
   text-align: right;
+}
+/* Glyphicons */
+@font-face {
+  font-family: "Glyphicons Halflings";
+  src: url("../fonts/glyphicons-halflings-regular.eot");
+  src: url("../fonts/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/glyphicons-halflings-regular.woff2") format("woff2"), url("../fonts/glyphicons-halflings-regular.woff") format("woff"), url("../fonts/glyphicons-halflings-regular.ttf") format("truetype"), url("../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg");
+}
+.glyphicon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: "Glyphicons Halflings";
+  font-style: normal;
+  font-weight: 100;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.glyphicon-chevron-up:before {
+  content: "\e113";
+}
+.glyphicon-chevron-down:before {
+  content: "\e114";
+}
+/* Tables */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid white;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 18px;
+}
+/* Empires */
+.empire-text {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+#empire-list {
+  position: relative;
+}
+#empire-list-table {
+  margin: 50px 0 10px 0;
+}
+#create-empire-form {
+  width: 800px;
+  padding: 5px;
+  color: white;
+}
+.create-button {
+  font-family: 'postamtregular';
+  font-size: 18px;
+  margin: 5px;
+  border: 0;
+  border-radius: 5px;
+}
+#create-empire {
+  display: block;
+  margin: 0 auto;
+}
+#submit-empire {
+  display: block;
+  margin: 0 auto;
+}
+#epanel1 {
+  display: block;
+}
+#epanel2 {
+  display: none;
+}
+/* Content */
+.button {
+  border: 0;
+  border-radius: 5px;
+  padding: 3px;
+  color: white;
+  background: #FF9D13;
+  font-family: 'postamtregular';
+}
+.title {
+  border-bottom: 5px ridge #c1c1c1;
+}
+.header {
+  background: #dddddd;
+  background: radial-gradient(circle, #dddddd 0%, #888888 50%, #333333 100%);
+}
+h2 {
+  font-family: 'postamtregular';
+  font-size: 2em;
+  text-align: center;
+  margin: 0;
+  padding: 10px;
+  text-shadow: 5px 5px 10px #000000;
+}
+td,
+th {
+  border: 1px solid white;
+  padding: 3px;
+}
+#error-message {
+  width: 86%;
+  text-align: center;
+  border: 5px ridge;
+  border-radius: 10px;
+  margin-left: 5%;
+  margin-top: 20px;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  text-shadow: 5px 5px 10px #000000;
+}
+.red {
+  background-color: #FF9500;
+  color: white;
+}
+.green {
+  background-color: #00FF95;
+  color: white;
+}
+.menu-bar {
+  list-style: none;
+  font-size: 20px;
+  background: #dddddd;
+  background: linear-gradient(#A59800, #D8C700, #D8C700, #A59800);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'postamtregular';
+}
+.menu-bar li {
+  display: inline-block;
+  padding-right: 10px;
+  padding: 10px;
+  background-color: #3831FB;
+  margin: 0;
+}
+.menu-bar a {
+  color: white;
+  text-decoration: none;
+}
+.menu-bar a:hover {
+  color: #FFEC13;
 }

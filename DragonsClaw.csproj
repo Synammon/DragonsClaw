@@ -181,6 +181,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\EmpireController.cs" />
     <Compile Include="Controllers\GameController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -190,7 +191,11 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\CreateEmpireModel.cs" />
     <Compile Include="Models\CreatePlayerModel.cs" />
+    <Compile Include="Models\EmpireListViewModel.cs" />
+    <Compile Include="Models\EmpirePlayerViewModel.cs" />
+    <Compile Include="Models\EmpireViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\PlayerViewModel.cs" />
@@ -239,7 +244,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -277,9 +284,14 @@
     <Content Include="Views\Game\Index.cshtml" />
     <Content Include="Views\Game\Create.cshtml" />
     <Content Include="Views\Shared\_PlayerHeader.cshtml" />
+    <Content Include="Views\Shared\_EmpireView.cshtml" />
+    <Content Include="Views\Shared\_EmpireListView.cshtml" />
+    <Content Include="Views\Shared\_CreateEmpireView.cshtml" />
+    <Content Include="Views\Shared\_CreateEmpireSuccessView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Empire\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -1,0 +1,30 @@
+﻿@using DragonsClaw.Models
+@model DragonsClaw.Models.CreateEmpireModel
+
+<div class="game-content">
+    <div class="header">
+        <h2>Create Empire</h2>
+    </div>
+    <div class="title"></div>
+    <form id="create-empire-form">
+        <div class="form-field">
+            <div class="create-label">Empire name:</div>
+            <div>
+                @Html.TextBoxFor(m => m.EmpireName)
+            </div>
+        </div>
+        <div class="form-field">
+            <div>
+                Creating an empire costs 1,000,000 credits. Are you sure? @Html.CheckBoxFor(m => m.Create)
+            </div>
+        </div>
+        <input type="button" value="Create" id="submit-empire" class="button" onclick="doCreateEmpire()" />
+    </form>
+    @if (Model != null && !string.IsNullOrEmpty(Model.Message))
+    {
+        <div id="error-message" class="red">
+            @Model.Message
+        </div>
+        <div class="title"></div>
+    }
+</div>

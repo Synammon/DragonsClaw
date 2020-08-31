@@ -1,0 +1,34 @@
+﻿@using DragonsClaw.Models
+@model DragonsClaw.Models.EmpireListViewModel
+
+<div id="empire-list" class="game-content">
+    <div class="header">
+        <h2>Empire List</h2>
+    </div>
+    <div class="title"></div>
+    <div>
+        <span class="empire-text">You are not part of an empire.</span>
+        <button id="create-empire" class="button" onclick="createEmpire()">Create</button>
+    </div>
+    <table id="empire-list-table" class="data-table">
+        <thead>
+            <tr>
+                <th>Empire</th>
+                <th>Host</th>
+                <th>Apply</th>
+            </tr>
+        </thead>
+        @foreach (EmpireViewModel m in Model.Empires)
+        {
+            <tr>
+                <td>@m.EmpireName</td>
+                <td>@m.Host</td>
+                <td>
+                    <button class="apply-button" onclick="applyEmpire(@m.EmpireId)">
+                        Apply
+                    </button>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
